@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CampusEats · Order ahead from campus kitchens</title>
+  <meta name="description" content="CampusEats lets you browse campus restaurants, order ahead for pickup or delivery, and skip the line. Get in touch with us here.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Instrument+Serif:ital@1&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body data-page="landing">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="app">
+
+  <header class="landing-header">
+    <a class="wordmark" href="landing.html">Campus<span>Eats</span></a>
+    <nav class="landing-nav" aria-label="Page sections">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="landing-nav__cta" href="index.html">Order now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="lp-hero" aria-labelledby="hero-title">
+      <div class="lp-hero__text">
+        <p class="eyebrow">Campus dining, made simple</p>
+        <h1 class="lp-title" id="hero-title">Skip the line.<br><em>Eat well.</em></h1>
+        <p class="lp-lead">Browse campus kitchens, build your order and pick it up when it’s ready, or have it delivered. All from one place.</p>
+        <div class="lp-actions">
+          <a class="btn-primary" href="index.html">Start ordering</a>
+          <a class="btn-secondary" href="#contact">Contact us</a>
+        </div>
+      </div>
+      <figure class="lp-hero__media">
+        <img src="assets/img/campus-smash-burger.png" width="640" height="480" alt="Double smash burger with melted cheddar, pickles and house sauce on a brioche bun">
+      </figure>
+    </section>
+
+    <section class="lp-section" id="features" aria-labelledby="features-title">
+      <p class="eyebrow">Why CampusEats</p>
+      <h2 class="h-section" id="features-title">Everything for a quick campus meal</h2>
+      <ul class="lp-cards">
+        <li class="lp-card">
+          <img src="assets/icons/icon-search.svg" width="24" height="24" alt="">
+          <h3 class="h-16">Browse campus favorites</h3>
+          <p>Explore bowls, burgers and salads from The Commons Kitchen and filter by what you’re craving.</p>
+        </li>
+        <li class="lp-card">
+          <img src="assets/icons/icon-pickup.svg" width="24" height="24" alt="">
+          <h3 class="h-16">Pickup or delivery</h3>
+          <p>Choose how you want your food and see an estimated time before you confirm.</p>
+        </li>
+        <li class="lp-card">
+          <img src="assets/icons/icon-ready.svg" width="24" height="24" alt="">
+          <h3 class="h-16">Order ahead</h3>
+          <p>Customize your sides, check out in a few taps and show your pickup code at the counter.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="lp-section" id="how-it-works" aria-labelledby="how-title">
+      <p class="eyebrow">Three steps</p>
+      <h2 class="h-section" id="how-title">How it works</h2>
+      <ol class="lp-steps">
+        <li><span class="lp-steps__num" aria-hidden="true">1</span><div><h3 class="h-16">Pick your food</h3><p>Choose a dish and a side.</p></div></li>
+        <li><span class="lp-steps__num" aria-hidden="true">2</span><div><h3 class="h-16">Check out</h3><p>Review your order and confirm pickup or delivery.</p></div></li>
+        <li><span class="lp-steps__num" aria-hidden="true">3</span><div><h3 class="h-16">Enjoy</h3><p>Show your pickup code and enjoy your meal.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="lp-section lp-contact" id="contact" aria-labelledby="contact-title">
+      <div class="lp-contact__intro">
+        <p class="eyebrow">Get in touch</p>
+        <h2 class="h-section" id="contact-title">Contact us</h2>
+        <p class="lp-lead">Questions, feedback or ideas for the menu? Send us a message and we’ll get back to you.</p>
+      </div>
+
+      <form class="lp-form" id="contact-form" novalidate>
+        <p class="lp-form__note">Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+
+        <div class="field">
+          <label for="name">Full name <span aria-hidden="true">*</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error" data-required="Please enter your name.">
+          <p class="field__error" id="name-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error" data-required="Please enter your email address.">
+          <p class="field__error" id="email-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic">
+            <option value="general">General question</option>
+            <option value="order">Help with an order</option>
+            <option value="feedback">Feedback</option>
+            <option value="menu">Menu suggestion</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Message <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="5" minlength="10" required aria-describedby="message-error" data-required="Please write a message." data-short="Your message should be at least 10 characters."></textarea>
+          <p class="field__error" id="message-error"></p>
+        </div>
+
+        <button class="btn-primary lp-form__submit" type="submit">Send message</button>
+        <p class="lp-form__status" id="form-status" role="status" tabindex="-1"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 CampusEats · Order ahead from campus kitchens.</p>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="browse.html">Browse menu</a></li>
+      <li><a href="cart.html">Your order</a></li>
+    </ul>
+  </footer>
+</div>
+<script src="js/landing.js"></script>
+</body>
+</html>

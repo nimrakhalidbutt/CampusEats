@@ -28,6 +28,7 @@ Figma file **CampusEats**, connected into a working ordering flow. No frameworks
 | Food Detail         | `food-detail.html`   | `?item=<id>`; choose a side, set quantity, **Add to cart** |
 | Order Details       | `cart.html`          | Change quantities (going below 1 removes the line), edit options, live totals |
 | Checkout            | `checkout.html`      | Pickup / Delivery toggle, order review, **Confirm order** |
+| Landing + contact   | `landing.html`       | Marketing page with a contact form (`css/landing.css`, `js/landing.js`); linked from every footer and the home logo |
 | Order Confirmation  | `confirmation.html`  | Order number, estimated window and pickup code generated from the order; **Back to home** clears the cart |
 
 Flow: `index → browse → food-detail → cart → checkout → confirmation → index`
@@ -38,6 +39,7 @@ Tip: open `cart.html?demo=1` to preload the exact two-item order shown in the Fi
 
 ```
 index.html  browse.html  food-detail.html  cart.html  checkout.html  confirmation.html
+css/landing.css, js/landing.js   landing page styles + contact-form validation
 css/styles.css          design tokens (Figma variables) + all screen styles
 js/app.js               menu data, cart (localStorage), page behaviour
 assets/img, assets/icons   filled by download-assets.sh

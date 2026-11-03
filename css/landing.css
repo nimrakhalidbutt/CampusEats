@@ -1,0 +1,131 @@
+/* ==========================================================================
+   CampusEats landing page + contact form
+   Loads AFTER styles.css and reuses its tokens, buttons, focus + hover states.
+   ========================================================================== */
+.app > .landing-header, .app > main, .app > footer {
+  padding-inline: max(20px, calc((100% - var(--page-max)) / 2));
+}
+html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ---------- Header ---------- */
+.landing-header {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px;
+  padding-block: 16px 8px; background: var(--canvas);
+}
+.landing-header .wordmark { padding-left: 0; }
+.landing-nav ul { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; }
+.landing-nav a {
+  display: inline-block; padding: 8px 12px; border-radius: 999px;
+  font: 800 12px/18px var(--f-body);
+  transition: background-color .15s, color .15s;
+}
+.landing-nav__cta { background: var(--brand); color: var(--white); border: var(--border); }
+@media (hover: hover) {
+  .landing-nav a:hover { background: var(--tone-3); }
+  .landing-nav .landing-nav__cta:hover { background: var(--tone-4); }
+}
+
+/* ---------- Shared bits ---------- */
+.lp-lead { max-width: 52ch; font: 400 15px/24px var(--f-body); color: var(--muted); }
+.lp-section { padding-block: 40px 8px; }
+.lp-section > .h-section { padding-top: 3px; }
+
+/* ---------- Hero ---------- */
+.lp-hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 24px 16px; align-items: center; }
+.lp-hero__text { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.lp-title {
+  font: 750 44px/44px var(--f-display);
+  font-variation-settings: "opsz" 14, "wdth" 100; letter-spacing: -2.2px;
+}
+.lp-title em { font: italic 400 44px/44px var(--f-serif); letter-spacing: -0.5px; color: var(--brand); }
+.lp-actions { display: flex; flex-wrap: wrap; gap: 14px; padding-top: 6px; }
+.lp-actions .btn-primary, .lp-actions .btn-secondary { padding-inline: 26px; }
+.lp-hero__media {
+  margin: 0 10px 8px 0; overflow: clip; background: var(--tone-3);
+  border: var(--border); border-radius: 30px 30px 30px 8px; box-shadow: 7px 8px 0 var(--lime);
+}
+.lp-hero__media img { width: 100%; height: 260px; object-fit: cover; }
+
+/* ---------- Feature cards ---------- */
+.lp-cards { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 18px 8px 8px 0; }
+.lp-card {
+  display: flex; flex-direction: column; gap: 8px; padding: 20px;
+  background: var(--card); border: var(--border); border-radius: 10px 24px 24px 24px; box-shadow: var(--shadow-card);
+}
+.lp-card img { width: 24px; height: 24px; }
+.lp-card p { font: 400 13px/20px var(--f-body); color: var(--muted); }
+
+/* ---------- Steps ---------- */
+.lp-steps { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; padding-top: 18px; }
+.lp-steps li { display: flex; align-items: flex-start; gap: 14px; }
+.lp-steps p { font: 400 13px/20px var(--f-body); color: var(--muted); }
+.lp-steps__num {
+  flex: none; width: 40px; height: 40px; display: grid; place-items: center;
+  background: var(--lime); border: var(--border); border-radius: 20px; box-shadow: 3px 3px 0 var(--ink);
+  font: 800 16px/24px var(--f-display);
+}
+
+/* ---------- Contact form ---------- */
+.lp-contact { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; padding-bottom: 48px; }
+.lp-contact__intro { display: flex; flex-direction: column; gap: 8px; }
+.lp-form {
+  display: flex; flex-direction: column; gap: 16px; padding: 22px;
+  background: var(--card); border: var(--border); border-radius: 10px 26px 26px 26px; box-shadow: var(--shadow-card);
+}
+.lp-form__note { font: 400 12px/18px var(--f-body); color: var(--muted); }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font: 800 12px/18px var(--f-body); }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 12px 14px;
+  background: var(--white); color: var(--ink);
+  border: var(--border); border-radius: 14px;
+  font: 400 16px/24px var(--f-body);
+  transition: box-shadow .15s, background-color .15s;
+}
+.field textarea { resize: vertical; min-height: 130px; }
+.field select { appearance: auto; }
+.field input::placeholder, .field textarea::placeholder { color: var(--muted); opacity: 1; }
+@media (hover: hover) { .field input:hover, .field select:hover, .field textarea:hover { box-shadow: 3px 3px 0 rgba(23, 59, 54, 0.22); } }
+.field [aria-invalid="true"] { border-color: #b3261e; background: #fff7f6; }
+.field__error { min-height: 0; font: 700 12px/18px var(--f-body); color: #b3261e; }
+.field__error:empty { display: none; }
+.lp-form__submit { align-self: stretch; cursor: pointer; }
+.lp-form__status { font: 700 13px/20px var(--f-body); }
+.lp-form__status:empty { display: none; }
+.lp-form__status.is-success { padding: 12px 14px; background: var(--lime); border: var(--border); border-radius: 14px; color: var(--ink); }
+.lp-form__status:focus { outline: none; }
+
+/* ==========================================================================
+   Tablet ≥ 768px
+   ========================================================================== */
+@media (min-width: 768px) {
+  .app > .landing-header, .app > main, .app > footer { padding-inline: max(32px, calc((100% - var(--page-max)) / 2)); }
+  .landing-header { padding-block: 20px 12px; }
+  .landing-nav a { font-size: 13px; padding: 8px 16px; }
+  .lp-hero { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; padding-block: 40px 24px; }
+  .lp-title, .lp-title em { font-size: 52px; line-height: 52px; }
+  .lp-hero__media img { height: 340px; }
+  .lp-section { padding-block: 56px 8px; }
+  .lp-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .lp-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .lp-contact { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; padding-bottom: 72px; align-items: start; }
+  .lp-form { padding: 28px; }
+  .lp-form__submit { align-self: flex-start; padding-inline: 32px; }
+}
+
+/* ==========================================================================
+   Desktop ≥ 1100px
+   ========================================================================== */
+@media (min-width: 1100px) {
+  .app > .landing-header, .app > main, .app > footer { padding-inline: max(48px, calc((100% - var(--page-max)) / 2)); }
+  .lp-hero { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 64px; padding-block: 56px 32px; }
+  .lp-title, .lp-title em { font-size: 72px; line-height: 70px; letter-spacing: -3.5px; }
+  .lp-lead { font-size: 17px; line-height: 27px; }
+  .lp-hero__media { border-radius: 40px 40px 40px 10px; }
+  .lp-hero__media img { height: 440px; }
+  .lp-section { padding-block: 72px 8px; }
+  .lp-card { padding: 28px; }
+  .lp-card p, .lp-steps p { font-size: 14px; line-height: 22px; }
+  .lp-contact { gap: 72px; }
+}

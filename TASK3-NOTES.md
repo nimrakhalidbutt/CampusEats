@@ -24,3 +24,6 @@ Playwright + Chromium at 375, 768, 1440 on all six pages: no overflow, axe-core 
 
 ## JS changes (all additive)
 Alt text data, `li` markup for cards/cart lines, `?q=` search filter on Browse, `aria-pressed`, richer aria-labels. Cart, totals, edit-options, checkout and confirmation logic untouched.
+
+## Landing page
+New `landing.html` (+ `css/landing.css`, `js/landing.js`) with a validated contact form. Linked from every footer ("About & contact") and the home-page logo. Tested at 320/375/768/1440px: no overflow, axe 0 violations.
