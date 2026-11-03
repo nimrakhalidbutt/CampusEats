@@ -134,4 +134,4 @@ Design: CampusEats Figma file. Implementation: HTML, CSS and vanilla JavaScript.
 
 ## License
 
-Add your license here (for example MIT) and include a `LICENSE` file.
+MIT License.
