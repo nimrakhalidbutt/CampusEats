@@ -1,83 +1,137 @@
-# CampusEats — website
+# CampusEats
 
-A responsive HTML / CSS / JavaScript build of the six mobile screens in the
-Figma file **CampusEats**, connected into a working ordering flow. No frameworks, no build step.
+A responsive food-ordering website for campus dining, built with plain **HTML, CSS and JavaScript**. It is a faithful implementation of the **CampusEats** Figma design: six screens connected into a working order flow, from browsing the menu to a pickup confirmation.
 
-## Run it
+No frameworks, no build step, no dependencies.
 
-1. **Download the images and icons** (needs internet, takes a few seconds):
+## Features
 
-   ```bash
-   bash download-assets.sh
-   ```
-
-2. **Serve the folder** and open it in a browser (a server is recommended so the cart
-   survives page changes in every browser):
-
-   ```bash
-   python3 -m http.server 8000
-   # then open http://localhost:8000
-   ```
+- Six pages that follow the Figma design: Homepage, Browse, Food Detail, Cart, Checkout and Order Confirmation
+- Working ordering flow: browse, add to cart, edit quantities, check out, get a pickup code
+- Menu filters (Popular, Bowls, Burgers, Salads)
+- Item detail with required side selection and quantity picker
+- Cart with live subtotal, service fee, tax and total
+- Pickup or delivery choice at checkout
+- Confirmation page with an order number, estimated time window and pickup code generated from the order
+- Cart and last order saved in the browser with `localStorage`
+- Mobile-first layout, centered in a column on tablets and desktops
 
 ## Pages and flow
 
-| Figma screen        | File                 | What it does |
-|---------------------|----------------------|--------------|
-| Homepage            | `index.html`         | Categories, "Popular right now", restaurant card → Browse / Detail |
-| Browse page         | `browse.html`        | Filter chips (Popular / Bowls / Burgers / Salads). `+` adds the item with the default side and opens the cart |
-| Food Detail         | `food-detail.html`   | `?item=<id>`; choose a side, set quantity, **Add to cart** |
-| Order Details       | `cart.html`          | Change quantities (going below 1 removes the line), edit options, live totals |
-| Checkout            | `checkout.html`      | Pickup / Delivery toggle, order review, **Confirm order** |
-| Landing + contact   | `landing.html`       | Marketing page with a contact form (`css/landing.css`, `js/landing.js`); linked from every footer and the home logo |
-| Order Confirmation  | `confirmation.html`  | Order number, estimated window and pickup code generated from the order; **Back to home** clears the cart |
-
-Flow: `index → browse → food-detail → cart → checkout → confirmation → index`
-
-Tip: open `cart.html?demo=1` to preload the exact two-item order shown in the Figma design.
-
-## Files
-
 ```
-index.html  browse.html  food-detail.html  cart.html  checkout.html  confirmation.html
-css/landing.css, js/landing.js   landing page styles + contact-form validation
-css/styles.css          design tokens (Figma variables) + all screen styles
-js/app.js               menu data, cart (localStorage), page behaviour
-assets/img, assets/icons   filled by download-assets.sh
-download-assets.sh      fetches every image / icon from the Figma file
+index → browse → food-detail → cart → checkout → confirmation → index
 ```
 
-## Design fidelity
+| Screen | File | What it does |
+|---|---|---|
+| Homepage | `index.html` | Categories, "Popular right now" and the restaurant card |
+| Browse | `browse.html` | Filter chips and the menu list. The `+` button adds an item and opens the cart |
+| Food Detail | `food-detail.html` | Choose a side, set quantity, add to cart (`?item=<id>`) |
+| Cart | `cart.html` | Change quantities, edit options, see totals |
+| Checkout | `checkout.html` | Pickup or delivery, payment row, order review, confirm |
+| Confirmation | `confirmation.html` | Order number, time window, pickup code |
 
-Colors, type (Bricolage Grotesque, Manrope, Instrument Serif), spacing, radii, borders and the
-hard offset shadows are copied from the Figma output; layouts are rebuilt with flexbox instead
-of absolute positioning. Each screen keeps its 390px mobile layout on phones; from 768px up the
-layout adapts (see **Responsive layout** below) instead of sitting in a narrow centred column.
+Tip: open `cart.html?demo=1` to preload the two-item order shown in the Figma design.
 
-Fonts load from Google Fonts. The browse/detail copy for items other than the Campus Smash Burger
-uses the short descriptions shown on the Browse cards.
+## Getting started
 
-## Responsive layout (Lab 07, Task 3)
+### 1. Clone the repository
 
-| Width | Layout |
-|-------|--------|
-| 375px (phone) | Original single-column mobile-app screens, bottom tab bar, sticky action bars |
-| 768px (tablet) | Tab bar becomes pills under the header; two-column grids (home, menu cards, food detail, cart, checkout) |
-| 1440px (desktop) | Content column up to 1200px; four menu cards per row, wider hero images, side-by-side cart / checkout / confirmation |
+```bash
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+```
 
-Every page uses `header`, `nav`, `main`, `section` and `footer`, a skip link, visible keyboard
-focus and hover states, labelled form controls (`for`/`id`) and descriptive `alt` text.
-The home search box now submits to `browse.html?q=…` and filters the menu.
-See `TASK3-NOTES.md` for the full change list and how it was tested.
+### 2. Download the images and icons
 
-## Things that are not in the Figma file (kept minimal)
+The photos and icons come from the Figma file and are not stored in the repo. Run the script once (requires internet):
 
-- An empty-cart message on `cart.html` (reuses existing tokens and the primary button).
-- Tax is computed as 3.78% so the design's $22.50 subtotal gives its $0.85 tax; the service fee is a flat $0.75.
-- The Profile tab and the Visa row are not wired (no screens exist for them).
-- The Login Screen and Search Overlay frames in the file were not part of the six screens and are not built.
+```bash
+bash download-assets.sh
+```
 
-## Assets
+This fills `assets/img/` and `assets/icons/`.
 
-The Figma asset links are temporary and expire 7 days after export. If `download-assets.sh`
-reports 403/404, export the same layers from Figma (right-click → Copy/Export as SVG or PNG @2x) and
-save them under the file names listed in the script.
+> **Note:** the Figma asset links in the script are temporary and expire after 7 days. If a download fails with 403 or 404, export the same images and icons from Figma and save them under the file names listed in `download-assets.sh`. You can then commit them to the repo and skip this step.
+
+### 3. Start a local server
+
+```bash
+python3 -m http.server 8000
+```
+
+On Windows use `python -m http.server 8000`. Any static server works (VS Code Live Server, `npx serve`, and so on).
+
+### 4. Open the site
+
+Go to <http://localhost:8000>.
+
+## Project structure
+
+```
+.
+├── index.html
+├── browse.html
+├── food-detail.html
+├── cart.html
+├── checkout.html
+├── confirmation.html
+├── css/
+│   └── styles.css        # design tokens and styles for every screen
+├── js/
+│   └── app.js            # menu data, cart logic, page behaviour
+├── assets/
+│   ├── img/              # photos (filled by download-assets.sh)
+│   └── icons/            # SVG icons (filled by download-assets.sh)
+├── download-assets.sh    # fetches images and icons from Figma
+└── README.md
+```
+
+## Design
+
+The design tokens are defined as CSS variables at the top of `css/styles.css` and match the Figma variables:
+
+| Token | Value |
+|---|---|
+| Canvas | `#f8f4e8` |
+| Card | `#fffdf7` |
+| Ink | `#173b36` |
+| Brand | `#0c7c70` |
+| Lime accent | `#dff7a3` |
+| Peach accent | `#f5dfc3` |
+| Muted text | `#667571` |
+
+Fonts (loaded from Google Fonts): **Bricolage Grotesque**, **Manrope** and **Instrument Serif**.
+
+## How it works
+
+- **Menu data** lives in the `MENU` array in `js/app.js`. Add or edit items there.
+- **Cart state** is stored in `localStorage` under `campuseats.cart`. The last order is stored under `campuseats.lastOrder`.
+- **Totals:** subtotal, plus a flat $0.75 campus service fee, plus tax at 3.78%. These values are constants at the top of `js/app.js`.
+- **Customer name** (used for the greeting and pickup code) is the `USER_NAME` constant in `js/app.js`.
+
+### Adding a menu item
+
+1. Add an object to `MENU` in `js/app.js` with `id`, `name`, `price`, `category`, `tag`, `desc` and `img`.
+2. Add the image to `assets/img/`.
+
+It then appears on the Browse page, the detail page and in the cart automatically.
+
+## Browser support
+
+Current versions of Chrome, Edge, Firefox and Safari.
+
+## Known limitations
+
+- There is no backend. Orders are simulated and no payment is processed.
+- The Profile tab and the payment row are visual only.
+- The Figma file also contains a Login screen and a Search overlay, which are not implemented.
+- The cart is stored per browser and is not synced across devices.
+
+## Credits
+
+Design: CampusEats Figma file. Implementation: HTML, CSS and vanilla JavaScript.
+
+## License
+
+Add your license here (for example MIT) and include a `LICENSE` file.
