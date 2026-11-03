@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CampusEats</title>
+  <meta name="description" content="Choose a side, set the quantity and add this dish from The Commons Kitchen to your cart.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Instrument+Serif:ital@1&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="food-detail">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="app">
+
+  <header class="topbar topbar--wide">
+    <p class="sr-only narrow-only">CampusEats</p>
+    <a class="icon-btn wide-only" href="browse.html" data-back aria-label="Back to menu"><img src="assets/icons/icon-back.svg" width="19.986" height="19.986" alt=""></a>
+    <a class="wordmark wide-only" href="index.html">Campus<span>Eats</span></a>
+    <a class="icon-btn wide-only" href="cart.html" aria-label="Open cart"><img src="assets/icons/icon-cart.svg" width="19.986" height="19.986" alt=""></a>
+  </header>
+
+  <nav class="bottom-nav bottom-nav--wide" aria-label="Primary">
+    <a class="nav-item" href="index.html"><img src="assets/icons/nav-home.svg" width="20.984" height="20.984" alt="">Home</a>
+    <a class="nav-item is-active" href="browse.html" aria-current="page"><img src="assets/icons/nav-browse-active.svg" width="20.984" height="20.984" alt="">Browse</a>
+    <a class="nav-item" href="cart.html"><img src="assets/icons/nav-orders.svg" width="20.984" height="20.984" alt="">Orders</a>
+    <button class="nav-item" type="button" title="Profile (coming soon)"><img src="assets/icons/nav-profile.svg" width="20.984" height="20.984" alt="">Profile</button>
+  </nav>
+
+  <main class="detail-main" id="main" tabindex="-1">
+    <section class="detail-hero" aria-label="Dish photo and rating">
+      <img class="detail-hero__img" id="hero-img" src="assets/img/campus-smash-burger.png" alt="Double smash burger with melted cheddar, pickles and house sauce on a brioche bun">
+      <a class="back-light" href="browse.html" data-back aria-label="Back to menu"><img src="assets/icons/icon-back.svg" width="19.986" height="19.986" alt=""></a>
+      <p class="review-pill"><img src="assets/icons/icon-star-detail.svg" width="13.983" height="13.983" alt="">4.9 · 126 reviews</p>
+    </section>
+
+    <section class="detail-panel" aria-labelledby="title">
+      <div class="detail-title-row">
+        <div>
+          <p class="eyebrow eyebrow--9">The Commons Kitchen</p>
+          <h1 class="detail-title" id="title">Campus Smash<br>Burger</h1>
+        </div>
+        <p class="price-pill" id="price-pill">$12</p>
+      </div>
+      <p class="detail-desc" id="desc"></p>
+      <ul class="detail-chips" id="chips"></ul>
+      <div class="rule"></div>
+
+      <fieldset class="options">
+        <legend class="sr-only">Choose one side (required)</legend>
+        <div class="options-head">
+          <div><h2>Make it yours</h2><p>Choose one side</p></div>
+          <span class="required">REQUIRED</span>
+        </div>
+        <label class="option" for="side-fries">
+          <span class="option__text"><span class="option__name">Seasoned fries</span><span class="option__note">Classic crispy cut</span></span>
+          <input type="radio" id="side-fries" name="side" value="fries" checked>
+        </label>
+        <label class="option" for="side-salad">
+          <span class="option__text"><span class="option__name">Side garden salad</span><span class="option__note">Light lemon dressing</span></span>
+          <input type="radio" id="side-salad" name="side" value="salad">
+        </label>
+      </fieldset>
+    </section>
+
+    <div class="action-bar">
+      <div class="qty-box" role="group" aria-label="Quantity">
+        <button type="button" id="dec" aria-label="Decrease quantity"><img src="assets/icons/icon-minus-lg.svg" width="16.994" height="16.994" alt=""></button>
+        <output id="qty">1</output>
+        <button type="button" id="inc" aria-label="Increase quantity"><img src="assets/icons/icon-plus-lg.svg" width="16.994" height="16.994" alt=""></button>
+      </div>
+      <button class="btn-primary" id="add" type="button">Add to cart <span class="btn-price" id="btn-price">$12.00</span></button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 CampusEats · Order ahead from campus kitchens.</p>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="browse.html">Browse menu</a></li>
+      <li><a href="cart.html">Your order</a></li>
+    </ul>
+  </footer>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>

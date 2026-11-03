@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Checkout · CampusEats</title>
+  <meta name="description" content="Choose pickup or delivery, review your order and confirm it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Instrument+Serif:ital@1&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="checkout">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="app">
+
+  <header class="topbar">
+    <a class="icon-btn" href="cart.html" data-back aria-label="Go back"><img src="assets/icons/icon-back.svg" width="19.986" height="19.986" alt=""></a>
+    <h1 class="screen-title">Checkout</h1>
+  </header>
+
+  <nav class="bottom-nav bottom-nav--wide" aria-label="Primary">
+    <a class="nav-item" href="index.html"><img src="assets/icons/nav-home.svg" width="20.984" height="20.984" alt="">Home</a>
+    <a class="nav-item" href="browse.html"><img src="assets/icons/nav-browse.svg" width="20.984" height="20.984" alt="">Browse</a>
+    <a class="nav-item is-active" href="cart.html" aria-current="page"><img src="assets/icons/nav-orders.svg" width="20.984" height="20.984" alt="">Orders</a>
+    <button class="nav-item" type="button" title="Profile (coming soon)"><img src="assets/icons/nav-profile.svg" width="20.984" height="20.984" alt="">Profile</button>
+  </nav>
+
+  <main class="checkout-main" id="main" tabindex="-1">
+    <ol class="stepper" aria-label="Checkout progress">
+      <li class="step step--done"><img src="assets/icons/icon-check-sm.svg" width="12.985" height="12.985" alt=""><span class="sr-only">Step 1, completed</span></li>
+      <li class="step-line" aria-hidden="true"></li>
+      <li class="step step--active" aria-current="step"><span class="sr-only">Step </span>2<span class="sr-only">, current</span></li>
+      <li class="step-line" aria-hidden="true"></li>
+      <li class="step"><span class="sr-only">Step </span>3</li>
+    </ol>
+
+    <div class="co-left">
+      <section class="co-section co-section--first" aria-labelledby="method-title">
+        <p class="eyebrow">How to get it</p>
+        <h2 class="h-section co-title co-title--light" id="method-title">Choose your method</h2>
+        <div class="methods" role="group" aria-labelledby="method-title">
+          <button class="method" type="button" data-method="pickup" aria-pressed="true">
+            <img src="assets/icons/icon-pickup.svg" width="19.986" height="19.986" alt="">
+            <span class="method__name">Pickup</span><span class="method__time">10–20 min</span>
+          </button>
+          <button class="method" type="button" data-method="delivery" aria-pressed="false">
+            <img src="assets/icons/icon-delivery.svg" width="19.986" height="19.986" alt="">
+            <span class="method__name">Delivery</span><span class="method__time method__time--lg">25–35 min</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="co-section" id="pickup-from" aria-labelledby="pickup-title">
+        <div class="co-row">
+          <div>
+            <p class="eyebrow">Pickup from</p>
+            <h2 class="h-16" id="pickup-title">The Commons Kitchen</h2>
+          </div>
+          <a class="change-link" href="browse.html">Change<span class="sr-only"> restaurant</span></a>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon"><img src="assets/icons/icon-store.svg" width="19.986" height="19.986" alt=""></div>
+          <div>
+            <p class="info-card__title">Student Union · Ground floor</p>
+            <p class="info-card__sub">Enter through the east doors</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="co-section" aria-labelledby="payment-title">
+        <p class="eyebrow">Payment</p>
+        <h2 class="h-16 co-title" id="payment-title">Payment method</h2>
+        <div class="info-card info-card--pay">
+          <span class="visa" aria-hidden="true">VISA</span>
+          <div class="info-card__grow">
+            <p class="info-card__title">Visa ending in 2048</p>
+            <p class="info-card__sub">Default payment</p>
+          </div>
+          <img class="chev" src="assets/icons/icon-chevron-right.svg" width="19.986" height="19.986" alt="">
+        </div>
+      </section>
+    </div>
+
+    <div class="co-right">
+      <section class="co-section co-section--review" aria-labelledby="review-title">
+        <h2 class="eyebrow" id="review-title">Order review</h2>
+        <div id="review-lines"></div>
+        <div class="review-sum"><span>Subtotal + fees</span><b id="review-total">$24.10</b></div>
+      </section>
+
+      <div class="action-bar">
+        <div class="total-block"><small>TOTAL</small><strong id="bar-total">$24.10</strong></div>
+        <button class="btn-primary confirm" id="confirm" type="button">Confirm order</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 CampusEats · Order ahead from campus kitchens.</p>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="browse.html">Browse menu</a></li>
+      <li><a href="cart.html">Your order</a></li>
+    </ul>
+  </footer>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
