@@ -135,3 +135,24 @@ Design: CampusEats Figma file. Implementation: HTML, CSS and vanilla JavaScript.
 ## License
 
 MIT License.
+
+## Layouts
+Laptop/PC
+
+
+<img width="1890" height="902" alt="image" src="https://github.com/user-attachments/assets/2d5d181f-77a3-45f2-babe-13713568ad45" />
+
+
+<img width="1917" height="897" alt="image" src="https://github.com/user-attachments/assets/aceedaf2-e86d-44f7-b777-7e340ad123cd" />
+
+
+Mobile
+
+
+<img width="592" height="1280" alt="WhatsApp Image 2026-11-03 at 11 25 07 AM" src="https://github.com/user-attachments/assets/35f06727-7916-4258-a00b-9745c8e42345" />
+
+
+<img width="592" height="1280" alt="WhatsApp Image 2026-11-03 at 11 25 15 AM" src="https://github.com/user-attachments/assets/0a435285-03c8-4142-ba53-84e83774cbcd" />
+
+
+
